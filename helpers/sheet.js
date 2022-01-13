@@ -2,13 +2,14 @@ const { GoogleSpreadsheet } = require("google-spreadsheet");
 const creds = require("../creds.json");
 require("dotenv").config();
 
-const fetchSpreadsheet = async (sheetDoc) => {
+const fetchSpreadsheet = async (sheetDoc, sheetName) => {
   await sheetDoc.useServiceAccountAuth(creds);
   await sheetDoc.loadInfo();
-  const sheet = sheetDoc.sheetsByIndex[0];
+  const sheet =
+    sheetName !== null
+      ? sheetDoc.sheetsByTitle[sheetName]
+      : sheetDoc.sheetsByIndex[0];
   const rows = await sheet.getRows();
-  // Get the column names from the first row
-  console.log(rows["Portfolio"]);
   let columns = rows[0]._sheet.headerValues;
   let data = [];
   for (let entry of rows) {
@@ -21,7 +22,7 @@ const fetchSpreadsheet = async (sheetDoc) => {
   return data;
 };
 
-module.exports = function (sheetID) {
+module.exports = function (sheetID, sheetName = null) {
   const doc = new GoogleSpreadsheet(sheetID);
-  return fetchSpreadsheet(doc);
+  return fetchSpreadsheet(doc, sheetName);
 };

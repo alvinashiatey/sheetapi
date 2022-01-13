@@ -14,6 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 setUpNunjucks(app);
 app.set("view engine", "njk");
 
+app.use(require("cors")());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
