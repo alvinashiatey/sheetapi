@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "alvin-projects",
+  "private_key_id": "39ead891559fe1027f97e85c91e347326cb439aa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCu7GONQ/OMtBuz\nWS8YHLXUW+UFf1TJYmSXoid8ILkYpNNyHyJnPzoYsSzoEaHpHQE8lt9SmSougvcf\nfMpQOlIMwgFM4Dy/15UNbbi9kwNn85+cQV5R4mJYdUexKIsQtODMMbIsjb2sI3nC\nvVkqEHFWVbi5xE//59XEEL+J5N9mVzFLIxTe6SvjGdPXO02qhddLC4ft33bSz1pf\nnWY6IRC2hT/Zf3N3SAbJP8rPWVk04HrmsLCqD4A7/B66yoaIGQEq0S4/H/rZnAfk\nV85CmX2BiAJM99LuBNmHMxEGYQyc8UysR3hKjuz/gRlwGd8k74sfxa0FXJ64Nsnw\n2RBBefo5AgMBAAECggEAMNA9ra+/OM4QBtoF5twoL6UfQYv5bKNc/+Wb0CtPi91/\nNhMTJi3COB7FMdOt06Ao9rABjQq59zXL4YkQ6heESxQeicXvnfd6nD84tQpgAnO9\nYDzrpb0fhaDgy0LNn/Fh5AmgN4esXOufcGUnizIAdr/AJ3LtgjO/dxHXaZMpdmS7\nemZVI8vSmEzseiHDwgeNFNYFyEAwL2IRmum0tx8TeWSrgnjnVKmRjiz/QPZ4B5uu\n29XrHnBIxVttjv0+QtpoDUk4xFBwXcO5Y3FcbRfFEN33c7ok+j3cYQVk8byzFzMe\nqR4/x2wvSUa9e8t22PaTQR5dMIhnwJGhuvVbfem/uwKBgQDWeUaOon7TErvtas3T\n8QpxsMyL6+NC8XFzba9ANJ4NUv1JxrXOesaR5OBFkBXCFuQ+q98TcfQCcXctNDhX\nsDP1whOHvacV8UpyrkvOfLRZZ8pSbqTyjFnaMARH1mU8yFGGigjUZ6M5HOfVLsAo\nu4rfg6Hvx8L26sDSUsqB03qjVwKBgQDQyr05farArSeni1pAPsPwdLkpw1EvQpJK\nEG8sDM69iGnYnrDJelV8e4V4PmEI8JD0waKor3fzi9HwnfF4T07kCZYkBGJpO8XP\n37RcPJD2bjtMpFCya83/VdBrdLRDn1E6FO8ZRvFnZPQWkNTAdpLE77SJLU/3epL1\nq6IxTE7k7wKBgQC8KLmV+Ul6tDzbFZBuGFIpXAqX1uMSn/AAbIILuh3PYreEOijW\ndTAwXrPDU51DIgIsWWzkCl0gp5r+tYmYpKVxPksUE3a68W13HyKyjQVMSppdp2Re\nxnMt0GJxA87dfIDJn+APOL0iJhHeHZ3IHoC/hyRS0NZi+aEg5DF1pKs7EQKBgF9K\nB+4zEjj5Tb3DdZ8Yhig5vT/4KhcdlNJEidhayAfsOBJq6lgpgtZbMWDdZz/DOwTZ\nUrkVy/LU/y2Hh+rWlzSvw1wQvDE23GKwwAnQgoBVcq7Z1xJ27P75VTOVgafTECkn\n4K9ylz4O7u9VjiOAeh9zHrv0eCiEQonomQ9Sujb1AoGBAKWoQZJ9Scmv6hod7w85\nkpmkFaat1BJ0xcsPWRGOMyFx3THV6bsk4WF4l00wTli3muwdEJ/D1LIaBBurr5RC\nVotX8/CJaDeb7FvN3KwMdv5TIjXS27YQVuihv6SbDVHSBTPXq497KajnjdTG71Fn\niPaHWWU6eFt8O+i4WYKZjzyC\n-----END PRIVATE KEY-----\n",
+  "client_email": "id-831collegenewhaven@alvin-projects.iam.gserviceaccount.com",
+  "client_id": "108706325955038806394",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/id-831collegenewhaven%40alvin-projects.iam.gserviceaccount.com"
+}

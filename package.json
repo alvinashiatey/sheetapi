@@ -1,0 +1,22 @@
+{
+  "name": "sheetapi-ongathering",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon ./bin/www",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "google-spreadsheet": "^3.2.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "dotenv": "^11.0.0"
+  }
+}
