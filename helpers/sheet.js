@@ -12,21 +12,21 @@ const fetchSpreadsheet = async (sheetDoc, sheetName) => {
   const rows = await sheet.getRows();
   let columns = rows[0]._sheet.headerValues;
   let data = [];
+  let rowValues = [];
+  for (let rowData of rows) {
+    rowValues.push(rowData._rawData)
+  }
 
-  //get the length of the longest row in the rows array
-  let maxLength = rows.reduce((max, row) => {
-    return Math.max(max, row.length);
-  }, 0);
-
-  let rowValues = rows.map((row) => {
+  let newRowValues = rowValues.map(row => {
+    let maxLength = columns.length
     const len = row.length;
-    return len > maxLength ? row.concat(Array(max - len).fill("")) : row;
+    return len < maxLength ? row.concat(Array(maxLength - len).fill('')) : row;
   })
 
-  for (let entry of rowValues) {
+  for (let entry of newRowValues) {
     let row = {};
-    for (let column of columns) {
-      row[column] = entry[column];
+    for (let [index, value] of entry.entries()) {
+      row[columns[index]] = value
     }
     data.push(row);
   }
