@@ -22,7 +22,7 @@ const fetchSpreadsheet = async (sheetDoc, sheetName) => {
     const len = row.length;
     return len > maxLength ? row.concat(Array(max - len).fill("")) : row;
   })
-  //push to main
+
   for (let entry of rowValues) {
     let row = {};
     for (let column of columns) {
