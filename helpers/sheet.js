@@ -9,6 +9,9 @@ const fetchSpreadsheet = async (sheetDoc, sheetName) => {
     sheetName !== null
       ? sheetDoc.sheetsByTitle[sheetName]
       : sheetDoc.sheetsByIndex[0];
+
+  // get the names of the sheets
+  const [sheetNames] = sheetDoc.sheetsByIndex.map(sh => sh.title);
   const rows = await sheet.getRows();
   let columns = rows[0]._sheet.headerValues;
   let data = [];
@@ -30,7 +33,7 @@ const fetchSpreadsheet = async (sheetDoc, sheetName) => {
     }
     data.push(row);
   }
-  return data;
+  return { data, sheetNames };
 };
 
 module.exports = function (sheetID, sheetName = null) {

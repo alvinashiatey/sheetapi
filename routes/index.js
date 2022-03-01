@@ -33,17 +33,18 @@ var checkCache = async (req, res, next) => {
 router.get("/:sheetID/:sheetName", checkCache, async function (req, res, next) {
   try {
     const { sheetID, sheetName } = req.params;
-    const sheetContent = await sheets(sheetID, sheetName);
+    const { data } = await sheets(sheetID, sheetName);
     const cacheKey = `${sheetID}--${sheetName}`;
-    await redis.set(cacheKey, JSON.stringify(sheetContent), {
+    await redis.set(cacheKey, JSON.stringify(data), {
       EX: 30, // Cache for 30 seconds
     });
     return res.json({
       sheetID: sheetID,
       sheetName: sheetName,
-      data: sheetContent,
+      data
     });
   } catch (err) {
+    console.error(err.message);
     res.status(500).json({
       error:
         "Either the sheet Id or Sheet name is incorrect. Please verify both and try again.",
@@ -54,16 +55,18 @@ router.get("/:sheetID/:sheetName", checkCache, async function (req, res, next) {
 router.get("/:sheetID", checkCache, async function (req, res, next) {
   try {
     const { sheetID } = req.params;
-    const sheetContent = await sheets(sheetID);
+    const { data, sheetNames } = await sheets(sheetID);
     const cacheKey = `${sheetID}`;
-    await redis.set(cacheKey, JSON.stringify(sheetContent), {
+    await redis.set(cacheKey, JSON.stringify(data), {
       EX: 30, // Cache for 30 seconds
     });
     return res.json({
       sheetID: sheetID,
-      data: sheetContent,
+      sheetName: sheetNames,
+      data,
     });
   } catch (err) {
+    console.error(err.message);
     res.status(500).json({
       error:
         "The Id submitted was not a valid sheet ID, please verify the Id and try again.",
