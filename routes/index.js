@@ -35,13 +35,21 @@ router.get("/:sheetID/:sheetName", checkCache, async function (req, res, next) {
     const { sheetID, sheetName } = req.params;
     const { data } = await sheets(sheetID, sheetName);
     const cacheKey = `${sheetID}--${sheetName}`;
-    await redis.set(cacheKey, JSON.stringify(data), {
-      EX: 30, // Cache for 30 seconds
-    });
+    await redis.set(
+      cacheKey,
+      JSON.stringify({
+        sheetID: sheetID,
+        sheetName: sheetName,
+        data,
+      }),
+      {
+        EX: 30, // Cache for 30 seconds
+      }
+    );
     return res.json({
       sheetID: sheetID,
       sheetName: sheetName,
-      data
+      data,
     });
   } catch (err) {
     console.error(err.message);
@@ -57,9 +65,17 @@ router.get("/:sheetID", checkCache, async function (req, res, next) {
     const { sheetID } = req.params;
     const { data, sheetNames } = await sheets(sheetID);
     const cacheKey = `${sheetID}`;
-    await redis.set(cacheKey, JSON.stringify(data), {
-      EX: 30, // Cache for 30 seconds
-    });
+    await redis.set(
+      cacheKey,
+      JSON.stringify({
+        sheetID: sheetID,
+        sheetName: sheetNames,
+        data,
+      }),
+      {
+        EX: 30, // Cache for 30 seconds
+      }
+    );
     return res.json({
       sheetID: sheetID,
       sheetName: sheetNames,
